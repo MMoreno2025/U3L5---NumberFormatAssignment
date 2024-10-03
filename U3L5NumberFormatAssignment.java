@@ -31,6 +31,7 @@ public class U3L5NumberFormatAssignment {
         NumberFormat fmt2 = NumberFormat.getCurrencyInstance(Locale.UK);
         System.out.println("You have:\t"+fmt2.format(convertedMoney));
         
+        
         //ask for input between 0 and 15, then format the number Pi to that number 
         //of decimal places, then print out number
         int pieDec = 20;
@@ -41,12 +42,14 @@ public class U3L5NumberFormatAssignment {
         double pieRound = roundAvoid(Math.PI, pieDec);
         System.out.println("Pie rounded "+pieDec+" decimal places is:\t"+pieRound);
         
+        
         //Generate a random number between  100,000,000 to 999e18 as a decial number//
-        Random ran = new Random();
-        NumberFormat df1 = new DecimalFormat("###.#####");  
-        double bigNumDec = 100000000*Math.pow(10,-18);
-        double ranBigNum = ran.nextDouble(bigNumDec, 999);
-        System.out.println("A random big num is:\t"+df1.format(ranBigNum*Math.pow(10,18)));
+        Random ran = new Random(); 
+        DecimalFormat df1 = new DecimalFormat("###");  
+        double bigNumDec = 100000000*Math.pow(10,-14);
+        double ranBigNum = ran.nextDouble(bigNumDec, 9990000);
+        System.out.println("Ran num: "+ranBigNum);
+        System.out.println("\nA random big num is:\t"+df1.format(ranBigNum*Math.pow(10,9)));
     }
     
     public static double roundAvoid(double value, int places){
